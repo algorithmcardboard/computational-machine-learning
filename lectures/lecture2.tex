@@ -1,0 +1,216 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+
+\begin{document}
+\newpage
+This lecture focus on Learning Machines.
+The ML function (\( f(D_{n} \)) is a blackbox that takes  \(\mathcal{X}\) and produces output \(\mathcal{Y}\).
+	where  \( D_{n} \) is the training data consisting of \((x_{1}, y_{1}),(x_{2}, y_{2}), ... ,(x_{n}, y_{n})\\ \) pairs (n \textgreater 1).
+
+Once the learning function is trained on the training data, we use (\( f(D_{n} \)) to predict the output \( y^{*}\) for a new input \(x^{*}\).\\\\
+\subsubsection*{Least Square Regression}
+
+Here \( \mathcal{X}  \in \rm I\!R \)  and \( \mathcal{Y}  \in \rm I\!R \). We can define \( f(\mathcal{X}) = W^{T}x + b \).
+
+w -- vector of features.
+
+b -- intercept
+
+\begin{equation}
+\min_{w,b} =   \sum_{i=1}^{n}(y_{i} - (w^{T}x_{i} + b))^{2}
+\end{equation}
+
+Learning is solving the above equation. The RHS of the equation is called as emperical risk.\\\\
+\subsubsection*{Loss function}
+
+\(l(y, u) = (y - u)^{2} \)
+u can be anything.  You substitute u to find the loss.\\\\\\
+In ML there are many degrees of freedom.
+\begin{enumerate}
+	\item \( \mathcal(X) \) - Input space
+	\item \( \mathcal(Y) \) - Output space
+	\item Hypothesis class (function space where f lives)
+	\item Loss function
+\end{enumerate}
+Using these four ingredients we can tackle any real world problems.
+
+You want to design a machine, when given an images tells you if an object is in a image or not. (image classification )\\
+input space - raw image (space of all images in the world, image is a grid)\\
+
+\(\mathcal{X}\) = \{ list of images \}.  This is not a good idea as the data is raw.  Machine needs something that can be represented as a vector or something that the machine can understand.
+
+So we vectorize \( \mathcal{X} \).
+
+\( \mathcal{X} \) -- \{ set of vectors. \}
+\( \mathcal{X} \in \rm I\!R ^{d}\)  where d is an integer in \(\rm I\!N\) (space of all points in the plane of dimension d).\\\\\\
+\subsubsection*{Feature representation}
+Representing raw data as feature vector is called as \textit{feature representation}
+
+Two ways to do feature representation.
+\begin{enumerate}
+	\item For each field there will be experts.  We rely on the experts to represent the data in a convenient mathematical form.
+	\item We can use ML to identify feature vector itself.
+\end{enumerate}
+
+Data scientist assumes that feature vector is available.  Feature representation might take decades to be perfected.  The vectors might be huge and not in a easily computable form.  But it is still better than the raw data.\\\\\\
+\subsubsection*{Hypothesis class}
+
+Simplest function -- \textit{constant value funciton}.
+
+\(\forall x \in \mathcal{X}\), f(x) = k;
+
+\textit{Affine functions}
+\(f(x) = W^{T}x + b\)
+
+Beyond constant value funcitons and affine functions we have polynomial functions.  We will see that affine functions takes us very very far.  Reason being that a good feature representation works well even with a linear learning machine.
+
+\textit{When features are crap, we migh tneed complex hypothesis functions.}\\\\\\
+\subsubsection*{Output space}
+
+Suppose we want to identify Taylor Swift.
+
+y = \{ 0, 1 \} -- binary classification.
+0 -- Not Taylor Swift.
+1 -- Taylor Swift.
+
+Suppose we have \textit{k} possible classifications, 
+y = \(\{0,1\}^{k} \to \) k class classification or k-way classification. (Vector of size k and each can be zero or one).
+
+
+If we need structured output such as string, say speech recording into strings :
+
+y = \{space of all strings \}
+
+y = \( \rm I\!R^{k} \) (real value vector to the power of k).  When we are solvingusing spatial coordinates --- k = 3. \\\\\\
+\subsubsection*{Loss function } (most important) \\
+You assume that you are going to evaluate the performance of your machine on some data.\\\\\\
+\subsection*{Performance Metrices}
+
+\((x_{1}, y_{1}),(x_{2}, y_{2}), ... ,(x_{n}, y_{n}) \) --- training data.
+
+\begin{equation}
+	R(f) = \frac{1}{n} \sum_{1}^{n} l(y_{i}, f(x_{i}))
+\end{equation}
+
+You take the data, leran how to answer on one part and measure on the next part.
+
+\subsubsection*{Over fitting} -- taking your training data and fitting it so well that you dont learn much.
+
+
+Say, we have n labelled training examples:
+
+Assume training data \( (x_{i}, y_{i}) \) is drawn from \(\rm I\!Px,y \) (Probability distribution).
+
+\( (x_{i}, y_{i}) \approx  \rm I\!Px, y \) (Identity distributed - independent)
+
+
+We care about the expected risk R(f).
+
+\begin{equation*}
+R(f) = \rm I\!E_{\rm I\!Px,y} = \int l*y, f(x)\rm I\!Pxy  dx,  dy
+\end{equation*}
+
+\begin{equation*}
+f = \{ (x_{1}^{test}, y_{1}^{test} ), (x_{2}^{test}, y_{2}^{test} ), ... , (x_{m}^{test}, y_{m}^{test} ) \}
+\end{equation*}
+
+\begin{equation*}
+	R_{test}(f) = \sum_{j = 1}^{m} l(y_{j}, x_{j})
+\end{equation*}
+ \\\\
+\subsubsection*{Difference between statistics and ML}
+In stat, you assume that the model follows some physical considerations.  In ML, you dont assume any model, instead you assume that there is an underlying Probability distribution.  You only need PDF to get the results for new inputs.
+
+
+In real world, either the model is not available or is too complicated.  ML always focuses on decision making.\\\\
+\subsubsection*{How to validate a model}
+\begin{enumerate}
+	\item Train your machine on \( \mathcal{D}_{n} \)
+	\item Test your machine on \( T_{m} \)
+	\item Important question here is: How to create \( T_{m} \)
+\end{enumerate}
+\
+\subsubsection*{Issues with dividing the data arbitrarily}
+If we are dealign with classification (say binary), we need to make sure that the sets are balanced. Holds true for k-class classificaiton too.
+
+Simplest way to solve this problem is to brute-force and check if things are balanced.  (Will be covered in the following course with scikit learn.  Scikit learn has ways to divide the data).\\\\
+\subsubsection*{Skewed data}
+If data is skewed, we need to check if the data represents the real world or if the data is not good.  (Examples of real world data that might be skewed:  Say we want to identify a very rare bird which can be sighted only a few times in a life time.  We have methods to transfer the features from other bird samples to this bird.)\\\\
+\subsubsection*{Dealing with imbalance}
+\begin{description}
+	\item{Case 1}:  Imbalance caused by data collection.
+	\item{Case 2}:  Imbalance is inherent to the task (Spam classification).
+\end{description}
+\
+\subsubsection*{Holdout validation}
+Taking your data and dividing into training and test set is called as Holdout validation.
+\
+\subsubsection*{Cross validatiaon}
+Generate many splits and validate across splits.
+
+Say you have 5 splits of data.  You rotate the test set from 4, 0, 1, 2, 3.
+
+Cross validation is more roboust assesment of real life data.\\\\
+\subsubsection*{Advice on dealing with data}
+Always normalize data.
+Assume \( \mathcal{X} \in \rm I\!R^{d}\) and assume data can range from \([0\; to\; 255]^{3} \).  Convert the scale to \([0\; to\; 1]^{3} \).
+
+\textit{Most of the algorithms we use will assume that data is normalized.}\\\\
+\subsubsection*{Methods to normalize}
+\begin{enumerate}
+	\item Scaling
+	\item Centering (if data is poission distributed)
+\end{enumerate}
+\
+\subsubsection*{Centering} 
+Centering means \( \forall j \in [1, d] \) (d dimensions), We want to make sure that the emperical value \( \rm I\!E(x:i,j) = 0 \)
+We can also say that the variance is 1.
+
+\begin{equation*}
+	\frac{1}{n}\sum_{1}^{n} (x_{i,j})^2 = 1 (unit \; variance)
+\end{equation*}
+ \\\\
+\subsubsection*{Why would you do centering?}
+Training is equivalent to doing some form of gradient descent.  For that we need to calculate the gradient.  When data is not centered, the conditioning is not good.  Centering helps in computing a proper conditioned data.  If we dont center, we will run into numerical instabilities.\\\\
+\subsubsection*{Missing data}
+In real world we have NA and MD(missing data).  Most ML algorithms break when there is missing data.  We need to take care before giving the data to algorithm. (Missing data imputation).  This is beyond the scope of this course.
+
+Two ways to deal with missing data
+\begin{enumerate}
+	\item Get the median
+	\item Fit with the rest of the data.
+\end{enumerate}
+
+
+\subsubsection*{Integral valued data}
+If you have integral value data, you should first wonder why it is integra?.
+
+\begin{enumerate}
+	\item \textbf{Missed notes for age and binary representation}
+	\item When data is in histogram
+\end{enumerate}
+
+\subsubsection*{When data is in histogram}
+Trick to amplify low counts and de-amplify high counts.
+
+Histogram is a vecotr \( (P_{1}, P_{2}, ... , P_{N}) \) and N bins.
+\begin{equation*}
+	\forall j, P_{j} > 0,\; do \; (counts/frequencies)
+\end{equation*}
+\begin{equation*}
+	\sum_{j = 1}^{N} P_{j} = 1 (Probability \; simplex)
+\end{equation*}
+
+We have to convert the histogram into euclidean space.  We need a transform for that.  The below function does the trick.
+
+\begin{equation*}
+	u_{j} = \frac{\sqrt{P_{j}}}{\sum_{j=1}^{N} \sqrt{P_{j}} }
+\end{equation*}
+
+Once we have moved the histogram to euclidean space, we have something that makes sense for doing dot product.
+
+\iffalse
+\fi
+
+\end{document}
