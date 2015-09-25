@@ -1,0 +1,80 @@
+[I 14:58:45.447 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
+[W 14:58:46.950 NotebookApp] ipywidgets package not installed.  Widgets are unavailable.
+[I 14:58:47.544 NotebookApp] Serving notebooks from local directory: /home/anirudhan/workspaces/computational-machine-learning/hw1
+[I 14:58:47.546 NotebookApp] 0 active kernels 
+[I 14:58:47.547 NotebookApp] The Jupyter Notebook is running at: https://[all ip addresses on your system]:8888/
+[I 14:58:47.548 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 14:58:50.526 NotebookApp] 302 GET /api/config/tree?_=1443131927106 (192.168.188.1) 4.88ms
+[I 14:58:50.552 NotebookApp] 302 GET /api/config/common?_=1443131927107 (192.168.188.1) 4.87ms
+[I 14:58:50.564 NotebookApp] 302 GET /api/terminals?_=1443131927108 (192.168.188.1) 5.54ms
+[I 14:58:51.046 NotebookApp] 302 GET /api/sessions?_=1443131927109 (192.168.188.1) 3.37ms
+[I 14:58:51.061 NotebookApp] 302 GET /api/terminals?_=1443131927110 (192.168.188.1) 3.76ms
+[I 14:58:51.125 NotebookApp] 302 GET /api/kernelspecs (192.168.188.1) 5.04ms
+[I 14:58:54.252 NotebookApp] 302 GET /tree/ (192.168.188.1) 1.94ms
+[I 14:58:56.974 NotebookApp] 302 POST /login?next=%2Ftree%2F (192.168.188.1) 2.69ms
+[I 14:59:11.814 NotebookApp] Creating new notebook in 
+[W 14:59:14.825 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js (192.168.188.1) 162.77ms referer=https://192.168.188.131:8888/notebooks/Untitled.ipynb?kernel_name=python2
+[I 14:59:15.030 NotebookApp] Kernel started: bb1306ac-4797-4778-9ed6-ede7b3977fa2
+PuTTY X11 proxy: unable to connect to forwarded X server: Network error: Connection refused
+PuTTY X11 proxy: unable to connect to forwarded X server: Network error: Connection refused
+PuTTY X11 proxy: unable to connect to forwarded X server: Network error: Connection refused
+PuTTY X11 proxy: unable to connect to forwarded X server: Network error: Connection refused
+[I 15:01:14.714 NotebookApp] Saving file at /Perceptron.ipynb
+[I 15:03:14.732 NotebookApp] Saving file at /Perceptron.ipynb
+[I 15:09:15.171 NotebookApp] Saving file at /Perceptron.ipynb
+[I 15:22:22.623 NotebookApp] Kernel shutdown: bb1306ac-4797-4778-9ed6-ede7b3977fa2
+[C 15:22:35.636 NotebookApp] received signal 15, stopping
+[I 15:22:35.637 NotebookApp] Shutting down kernels
+[W 15:59:49.952 NotebookApp] ipywidgets package not installed.  Widgets are unavailable.
+[I 15:59:49.970 NotebookApp] The port 8888 is already in use, trying another random port.
+[I 15:59:50.046 NotebookApp] Serving notebooks from local directory: /home/anirudhan/workspaces/computational-machine-learning/hw1
+[I 15:59:50.047 NotebookApp] 0 active kernels 
+[I 15:59:50.047 NotebookApp] The Jupyter Notebook is running at: https://[all ip addresses on your system]:8889/
+[I 15:59:50.047 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:00:25.534 NotebookApp] received signal 15, stopping
+[I 16:00:25.535 NotebookApp] Shutting down kernels
+[W 16:00:46.208 NotebookApp] ipywidgets package not installed.  Widgets are unavailable.
+[I 16:00:46.280 NotebookApp] Serving notebooks from local directory: /home/anirudhan/workspaces/computational-machine-learning/hw1
+[I 16:00:46.280 NotebookApp] 0 active kernels 
+[I 16:00:46.280 NotebookApp] The Jupyter Notebook is running at: https://[all ip addresses on your system]:8888/
+[I 16:00:46.281 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 16:00:54.488 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1): Kernel does not exist: 073d86b7-4112-4181-bdb6-4586874fefa0
+[W 16:00:54.548 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1) 135.38ms referer=None
+[W 16:01:07.179 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1): Kernel does not exist: 4ef741a9-37d9-485e-8f7c-130fffa4bc11
+[W 16:01:07.183 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1) 8.05ms referer=None
+[W 16:01:26.125 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1): Kernel does not exist: e8f0c872-6e34-42f6-a09b-5a56ec812d47
+[W 16:01:26.128 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1) 7.89ms referer=None
+[W 16:01:54.506 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1): Kernel does not exist: 073d86b7-4112-4181-bdb6-4586874fefa0
+[W 16:01:54.510 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1) 8.72ms referer=None
+[W 16:02:37.068 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1): Kernel does not exist: 4ef741a9-37d9-485e-8f7c-130fffa4bc11
+[W 16:02:37.071 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1) 8.43ms referer=None
+[W 16:03:37.095 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1): Kernel does not exist: e8f0c872-6e34-42f6-a09b-5a56ec812d47
+[W 16:03:37.099 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1) 8.94ms referer=None
+[W 16:04:37.119 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1): Kernel does not exist: 073d86b7-4112-4181-bdb6-4586874fefa0
+[W 16:04:37.123 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1) 8.60ms referer=None
+[W 16:05:37.150 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1): Kernel does not exist: 4ef741a9-37d9-485e-8f7c-130fffa4bc11
+[W 16:05:37.153 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1) 8.18ms referer=None
+[W 16:06:37.176 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1): Kernel does not exist: e8f0c872-6e34-42f6-a09b-5a56ec812d47
+[W 16:06:37.180 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1) 8.54ms referer=None
+[W 16:07:37.206 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1): Kernel does not exist: 073d86b7-4112-4181-bdb6-4586874fefa0
+[W 16:07:37.209 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1) 8.27ms referer=None
+[W 16:08:37.236 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1): Kernel does not exist: 4ef741a9-37d9-485e-8f7c-130fffa4bc11
+[W 16:08:37.240 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1) 9.80ms referer=None
+[W 16:09:37.266 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1): Kernel does not exist: e8f0c872-6e34-42f6-a09b-5a56ec812d47
+[W 16:09:37.269 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1) 8.06ms referer=None
+[W 16:10:37.298 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1): Kernel does not exist: 073d86b7-4112-4181-bdb6-4586874fefa0
+[W 16:10:37.301 NotebookApp] 404 GET /api/kernels/073d86b7-4112-4181-bdb6-4586874fefa0/channels?session_id=49C2E311A2CF4814A5B6B328582DDF36 (192.168.188.1) 8.05ms referer=None
+[W 16:11:37.331 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1): Kernel does not exist: 4ef741a9-37d9-485e-8f7c-130fffa4bc11
+[W 16:11:37.334 NotebookApp] 404 GET /api/kernels/4ef741a9-37d9-485e-8f7c-130fffa4bc11/channels?session_id=DF2E7C06EB9E48A795C45AB9FBFD8D29 (192.168.188.1) 7.95ms referer=None
+[W 16:12:37.359 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1): Kernel does not exist: e8f0c872-6e34-42f6-a09b-5a56ec812d47
+[W 16:12:37.363 NotebookApp] 404 GET /api/kernels/e8f0c872-6e34-42f6-a09b-5a56ec812d47/channels?session_id=E7BC1B4CA2FA43D38E45B790B2D939D0 (192.168.188.1) 9.00ms referer=None
+[W 19:16:56.365 NotebookApp] No such file or directory: notebooks
+[W 19:16:56.367 NotebookApp] 404 GET /api/contents/notebooks?type=directory&_=1443133926005 (192.168.188.1) 23.85ms referer=https://192.168.188.131:8888/tree/notebooks
+[W 19:17:12.062 NotebookApp] 404 GET /notebooks/notebooks/01.3%20Data%20Representation%20for%20Machine%20Learning.ipynb (192.168.188.1): No such file or directory: notebooks/01.3 Data Representation for Machine Learning.ipynb
+[W 19:17:12.068 NotebookApp] 404 GET /notebooks/notebooks/01.3%20Data%20Representation%20for%20Machine%20Learning.ipynb (192.168.188.1) 8.57ms referer=https://192.168.188.131:8888/tree/notebooks
+[W 19:17:16.770 NotebookApp] 404 GET /notebooks/notebooks/01.2%20IPython%20Numpy%20and%20Matplotlib%20Refresher.ipynb (192.168.188.1): No such file or directory: notebooks/01.2 IPython Numpy and Matplotlib Refresher.ipynb
+[W 19:17:16.775 NotebookApp] 404 GET /notebooks/notebooks/01.2%20IPython%20Numpy%20and%20Matplotlib%20Refresher.ipynb (192.168.188.1) 7.37ms referer=https://192.168.188.131:8888/tree/notebooks
+[W 19:17:20.209 NotebookApp] 404 GET /notebooks/notebooks/02.1%20Supervised%20Learning%20-%20Classification.ipynb (192.168.188.1): No such file or directory: notebooks/02.1 Supervised Learning - Classification.ipynb
+[W 19:17:20.215 NotebookApp] 404 GET /notebooks/notebooks/02.1%20Supervised%20Learning%20-%20Classification.ipynb (192.168.188.1) 7.86ms referer=https://192.168.188.131:8888/tree/notebooks
+[C 19:17:43.404 NotebookApp] received signal 15, stopping
+[I 19:17:43.405 NotebookApp] Shutting down kernels
