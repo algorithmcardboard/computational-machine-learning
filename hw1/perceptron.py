@@ -6,6 +6,19 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.cross_validation import train_test_split
 
+def batch_perceptron(X_in, y_in, max_iterations):
+    w = np.zeros(X_in.shape[1])
+    for t in range(0,max_iterations):
+        tmp = np.dot(X_in, w)
+        for i in range(0, X_in.shape[0]):
+            if((y_in[i] * tmp[i]) <= 0):
+                w += (y_in[0] * X_in[0])
+                break
+        print w
+    return w
+
+
+
 scaler = StandardScaler()
 
 iris = datasets.load_iris()
@@ -43,8 +56,8 @@ print(y)
 
 train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=0.5, random_state=1999)
 
-print("\n\n")
-print(train_y)
-print("\n\n")
-print(test_y)
+print train_X
+
+y[y==0] = -1 #Change zeros to -1 for balance.
+
 

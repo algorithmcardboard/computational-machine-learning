@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.9.11)  14 SEP 2015 08:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.11)  28 SEP 2015 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -166,7 +166,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
 [1
 
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
@@ -308,12 +308,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
 [5] [6] (./lecture2.aux) ) 
 Here is how much of TeX's memory you used:
- 874 strings out of 493305
- 10203 string characters out of 6139897
- 65434 words of memory out of 5000000
+ 875 strings out of 493304
+ 10213 string characters out of 6139871
+ 65437 words of memory out of 5000000
  4381 multiletter control sequences out of 15000+600000
  5848 words of font info for 23 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  27i,5n,20p,349b,170s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
+x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/rsfs/rsfs10.pfb>
+Output written on lecture2.pdf (6 pages, 135969 bytes).
+PDF statistics:
+ 67 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on lecture2.dvi (6 pages, 12556 bytes).
