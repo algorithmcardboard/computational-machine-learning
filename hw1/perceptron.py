@@ -7,7 +7,9 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.cross_validation import train_test_split
 
-def batch_perceptron(X_in, y_in, max_iterations, display_format, w):
+MAX_ITER = 10000
+
+def batch_perceptron(X_in, y_in, max_iterations, display_format, w, label):
     #w = np.zeros(X_in.shape[1])
     errors = []
     for t in range(0,max_iterations):
@@ -24,12 +26,36 @@ def batch_perceptron(X_in, y_in, max_iterations, display_format, w):
     plt.plot(errors, 'r-');
     plt.xlabel("Iterations")
     plt.ylabel("Error")
+    plt.title("Perceptron with " + label)
+    plt.show()
+    return w, errors
+
+def modified_batch_perceptron(X_in, y_in, eta, max_iterations, display_format, w, label):
+    #w = np.zeros(X_in.shape[1])
+    errors = []
+    for t in range(0,max_iterations):
+        mis_classification = 0
+        tmp = np.dot(X_in, w)
+        for i in range(0, X_in.shape[0]):
+            if((y_in[i] * tmp[i]) <= 0):
+                w += (eta * y_in[i] * X_in[i])
+                mis_classification += 1
+        print "iteration ", t, " error ",mis_classification 
+        errors.append(mis_classification)
+        if(mis_classification == 0):
+            break
+    plt.plot(errors, 'r-');
+    plt.xlabel("Iterations")
+    plt.ylabel("Error")
+    plt.title("Perceptron with " + label)
     plt.show()
     return w, errors
 
 def load_iris_data(class_to_reject, class_to_label_as_minus_one, class_to_label_as_one):
-    randState = 7021947
-    #randState = 21947 #doesnt converge even for 100000 iterations
+    # This random number plays a huge role as it determines the split and shuffle of the data.
+    randState = 7021947 # perceptron converges in some finite iterations.
+    #randState = 21947 # doesnt converge even for 100000 iterations
+    # A perceptron sometimes doesn't converge it seems. 
     scaler = StandardScaler()
     iris = datasets.load_iris()
     d = iris.data
@@ -72,9 +98,26 @@ ax.scatter(train_X[idx, 0], train_X[idx, 1], train_X[idx, 2], color=colors[1], l
 
 plt.show()
 
-w, errors = batch_perceptron(train_X, train_y, 10000, 'ro', np.zeros(train_X.shape[1]))
-w, n_errors = batch_perceptron(test_X, test_y, 10000, 'go', w)
+w1, errors = batch_perceptron(train_X, train_y, MAX_ITER, 'ro', np.zeros(train_X.shape[1]), 'Training data')
+# Ideally you would want to test your learning parameter in your test data.  Here we are just running the algorithm against the test data and we might end up modifying w too.
+w2, n_errors = batch_perceptron(test_X, test_y, MAX_ITER, 'go', w1, 'Test data')
 
 plt.plot(errors, 'r-');
 plt.plot(n_errors, 'b-');
+plt.title("Combined plot of train and test")
 plt.show()
+
+print "W1 is ", w1, " w2 is ", w2
+
+#ETA = 1 # Same as batch_perceptron
+#ETA = 0.5 # Iterations remain unchanged.  Same as batch perceptron.  changing eta changes the magnitude and not the direction
+ETA = 1.5 # Same as batch_perceptron
+w3, m_errors = modified_batch_perceptron(train_X, train_y, ETA, MAX_ITER, 'ro', np.zeros(train_X.shape[1]), 'Training data')
+w4, n_m_errors = modified_batch_perceptron(test_X, test_y, ETA, MAX_ITER, 'go', w3, 'Test data')
+
+plt.plot(m_errors, 'r-');
+plt.plot(n_m_errors, 'b-');
+plt.title("Modified Perceptron: Combined plot of train and test")
+plt.show()
+
+print "W3 is ", w3, " w4 is ", w4
