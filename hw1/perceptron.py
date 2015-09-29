@@ -9,6 +9,7 @@ from sklearn.cross_validation import train_test_split
 
 def batch_perceptron(X_in, y_in, max_iterations, display_format, w):
     #w = np.zeros(X_in.shape[1])
+    errors = []
     for t in range(0,max_iterations):
         mis_classification = 0
         tmp = np.dot(X_in, w)
@@ -16,12 +17,15 @@ def batch_perceptron(X_in, y_in, max_iterations, display_format, w):
             if((y_in[i] * tmp[i]) <= 0):
                 w += (y_in[i] * X_in[i])
                 mis_classification += 1
-        plt.plot(t, mis_classification, display_format)
         print "iteration ", t, " error ",mis_classification 
-        #if(mis_classification == 0):
-        #    break
+        errors.append(mis_classification)
+        if(mis_classification == 0):
+            break
+    plt.plot(errors, 'r-');
+    plt.xlabel("Iterations")
+    plt.ylabel("Error")
     plt.show()
-    return w
+    return w, errors
 
 def load_iris_data(class_to_reject, class_to_label_as_minus_one, class_to_label_as_one):
     randState = 7021947
@@ -52,9 +56,9 @@ def load_iris_data(class_to_reject, class_to_label_as_minus_one, class_to_label_
     train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=0.5, random_state=randState)
     return train_X, test_X, train_y, test_y
 
-train_X, test_X, train_y, test_y = load_iris_data(0, 1, 2)
+train_X, test_X, train_y, test_y = load_iris_data(0, 1, 2) #takes time to converge.  Depends on random seed
 #train_X, test_X, train_y, test_y = load_iris_data(2, 0, 1) # converges very fast. Really fast.
-#train_X, test_X, train_y, test_y = load_iris_data(1, 2, 0) # converges very fast. Really fast.
+#train_X, test_X, train_y, test_y = load_iris_data(1, 2, 0) # converges very fast. This one too
 
 
 fig = plt.figure()
@@ -68,5 +72,9 @@ ax.scatter(train_X[idx, 0], train_X[idx, 1], train_X[idx, 2], color=colors[1], l
 
 plt.show()
 
-w = batch_perceptron(train_X, train_y, 10000, 'ro', np.zeros(train_X.shape[1]))
-batch_perceptron(test_X, test_y, 10000, 'go', w)
+w, errors = batch_perceptron(train_X, train_y, 10000, 'ro', np.zeros(train_X.shape[1]))
+w, n_errors = batch_perceptron(test_X, test_y, 10000, 'go', w)
+
+plt.plot(errors, 'r-');
+plt.plot(n_errors, 'b-');
+plt.show()
