@@ -119,6 +119,9 @@ print "W1 is ", w1, " w2 is ", w2
 #   The perceptron algorithm may (or) may not converge depending on the split of the data.
 #   The mis-classification error count goes down for most iterations when perceptron runs on a dataset that will converge
 #   There are observable oscillation in mis-classification error when the perceptron does not converge
+#   In Modified batch perceptron, changing eta changes the magnitude of the learning parameter w.  It doesn't change its direction
+#   When eta = 1, modified batch perceptron and batch perceptron give the same results.
+#   When eta is non zero, the magnitude of learning parameter is eta times the learning parameter got with batch_perceptron algorithm
 ##############################################################
 
 #ETA = 1 # Same as batch_perceptron
