@@ -47,7 +47,9 @@ def mykmeans_multi(X, max_clusters = 8, max_iterations=100):
 
     for outIter in range(0, max_iterations):
         print "Iterating the outer loop for {0}".format(outIter)
-        rnd = np.random.RandomState()
+        # Dont use a seed value as we have to generate multiple permutations
+        randState = 10312003
+        rnd = np.random.RandomState(randState)
         permutation = rnd.permutation(len(X))[:max_clusters]
 
         centroids, distortion = kmeans_raw(X, permutation, max_clusters=max_clusters, max_iterations=max_iterations, plot=False)
