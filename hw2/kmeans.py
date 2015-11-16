@@ -39,6 +39,7 @@ def mykmeans(X, max_clusters = 8, max_iterations=10000):
 
     distortion_plot.savefig('distortion_plot.png')
     centroid_plot.savefig('centroid_plot.png')
+    return centroids
 
 if __name__ == '__main__':
 
