@@ -23,7 +23,7 @@ def kmeans_raw(X, permutation, max_clusters = 8, max_iterations = 100, plot=Fals
     for nIter in range(0, max_iterations):
         if plot:
             for center in centroids:
-                c_ax.plot(center[0], center[1],'r-')
+                c_ax.scatter(center[0], center[1])
         distances = pairwise_distances(X, centroids, metric='euclidean')
         clusters = np.argmin(distances,axis=1)
         min_distances = np.amin(distances, axis=1)
@@ -48,8 +48,7 @@ def mykmeans_multi(X, max_clusters = 8, max_iterations=100):
     for outIter in range(0, max_iterations):
         print "Iterating the outer loop for {0}".format(outIter)
         # Dont use a seed value as we have to generate multiple permutations
-        randState = 10312003
-        rnd = np.random.RandomState(randState)
+        rnd = np.random.RandomState()
         permutation = rnd.permutation(len(X))[:max_clusters]
 
         centroids, distortion = kmeans_raw(X, permutation, max_clusters=max_clusters, max_iterations=max_iterations, plot=False)

@@ -15,13 +15,14 @@ def mykmeans_plus_plus(X, max_clusters = 8, max_iterations=10000):
     centroids = np.empty(shape=(max_clusters, X.shape[1]))
     centroids[0] = X[rnd.permutation(len(X))[0]]
 
-    d2weighting = np.power(pairwise_distances(X, centroids[np.newaxis,0], metric='euclidean'), 2)
-    d2weighting = d2weighting/np.sum(d2weighting)
-
     for itr in range(1, max_clusters):
+
+        d2weighting = pairwise_distances(X, centroids[:itr], metric='euclidean')
+        d2weighting = np.power(np.amin(d2weighting, axis=1),2)
+        d2weighting = d2weighting/np.sum(d2weighting)
+
         index = np.argmax(d2weighting)
         centroids[itr] = X[index + itr - 1]
-        np.delete(d2weighting, index)
     
     print centroids
 
