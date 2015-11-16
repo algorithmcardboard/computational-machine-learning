@@ -51,4 +51,4 @@ if __name__ == '__main__':
 
     scaler.fit(X)
     X_scaled = scaler.transform(X)
-    mykmeans(X_scaled, max_clusters=3, max_iterations=100)
+    mykmeans(X_scaled, max_clusters=150, max_iterations=100)
